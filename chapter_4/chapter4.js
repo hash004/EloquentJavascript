@@ -15,8 +15,30 @@ function range(start, end, step){
 
 function sum(range){
   var total = 0;
-  for(i=0;i<range.length;i++){
+  for(var i=0;i<range.length;i++){
     total += range[i];
   }
   return total;
+}
+// 0 1 2 3 4
+// 2 4 6 8 10
+//10 8 6 4 2
+function reverseArray(array){
+  var newArray = [];
+  var loop = array.length
+  for(var i=0;i<loop;i++){
+    newArray.push(array.pop());
+  }
+  return newArray;
+}
+
+function reverseArrayInPlace(array){
+  var loop = array.length
+  for(var i=0;i<Math.floor(loop/2);i++){
+    var hold = array[(array.length-1)-i];
+    var other =
+    array.push(array[i]);
+    array
+  }
+  return array;
 }
