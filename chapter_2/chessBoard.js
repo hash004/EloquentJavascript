@@ -5,7 +5,7 @@ function chessBoard(size){
     for(i=0;i<grid;i++){
         for(j=0;j<grid;j++){
             hash++;
-            if((hash+i)%2==0){
+            if((hash+i)%2===0){
                 board += "#";
             } else {
                 board += " ";
