@@ -20,12 +20,10 @@ function sum(range){
   }
   return total;
 }
-// 0 1 2 3 4
-// 2 4 6 8 10
-//10 8 6 4 2
+
 function reverseArray(array){
   var newArray = [];
-  var loop = array.length
+  var loop = array.length;
   for(var i=0;i<loop;i++){
     newArray.push(array.pop());
   }
@@ -33,12 +31,19 @@ function reverseArray(array){
 }
 
 function reverseArrayInPlace(array){
-  var loop = array.length
+  var loop = array.length;
   for(var i=0;i<Math.floor(loop/2);i++){
     var hold = array[(array.length-1)-i];
-    var other =
-    array.push(array[i]);
-    array
+    array[(array.length-1)-i] = array[i];
+    array[i] = hold;
   }
   return array;
 }
+
+//[10, 20, 30]
+// function arrayToList(array){
+//   var list = {};
+//   for(i=0;i<array.length;i++){
+//     list +=
+//   }
+// }
