@@ -40,10 +40,29 @@ function reverseArrayInPlace(array){
   return array;
 }
 
-//[10, 20, 30]
-// function arrayToList(array){
-//   var list = {};
-//   for(i=0;i<array.length;i++){
-//     list +=
-//   }
-// }
+//[10, 20]
+//Outputs → {value: 10, rest: {value: 20, rest: null}}
+//This creats a nested set of objects, which is called a list
+function arrayToList(array){
+  var list = null;
+  for(i=array.length-1;i>=0;i--){
+    list = {value: array[i], rest:list}
+  }
+  return list;
+}
+
+function listToArray(list){
+  var array = [];
+  for(node=list;node;node=node.rest){
+    array.push(node.value);
+  }
+  return array;
+}
+
+function prepend(element, list){
+  return {value: element, rest:list};
+}
+
+function nth(){
+
+}
