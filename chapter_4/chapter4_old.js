@@ -113,11 +113,3 @@ function deepEqual(x, y){
 
     return propsX == propsY;
 }
-
-
-
-
-
-
-
-

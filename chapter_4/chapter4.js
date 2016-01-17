@@ -63,6 +63,41 @@ function prepend(element, list){
   return {value: element, rest:list};
 }
 
-function nth(){
+function nth(list, number){
+  var i = 0;
+  for(node=list;node;node=node.rest){
+    if(i==number){
+      return (node.value);
+    }
+    i++;
+  }
+  return undefined;
+}
 
+function recursiveNth(list, num){
+  if(num==0){
+    return list.value;
+  } else {
+    //why do I have to return this? By calling the function within itself you are creating a stack so the first/outer loop is paused until the second/inner loop is finished/returns something, until the loop breaks.
+    //So you have to return the function in order to carry the value from the inner most loop with the answer to the outter most loop in the stack.
+    return recursiveNth(list.rest, num-1);
+  }
+}
+
+function deepEqual(value1, value2){
+  if((typeof value1 == "object" && value1 != null) && (typeof value2 == "object" && value2 != null)){
+    for(var prop in value1){
+      if((typeof value1[prop] == "object" && value1 != null) && (typeof value2[prop] == "object" && value2[prop] != null)){
+        deepEqual(value1[prop], value2[prop]);
+      }
+      else if(value1[prop]==value2[prop]) {
+          return true;
+      }
+      else {
+        return false;
+      }
+    }
+  } else {
+    return false;
+  }
 }
