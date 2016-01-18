@@ -46,7 +46,7 @@ function reverseArrayInPlace(array){
 function arrayToList(array){
   var list = null;
   for(i=array.length-1;i>=0;i--){
-    list = {value: array[i], rest:list}
+    list = {value: array[i], rest:list};
   }
   return list;
 }
@@ -75,7 +75,7 @@ function nth(list, number){
 }
 
 function recursiveNth(list, num){
-  if(num==0){
+  if(num===0){
     return list.value;
   } else {
     //why do I have to return this? By calling the function within itself you are creating a stack so the first/outer loop is paused until the second/inner loop is finished/returns something, until the loop breaks.
@@ -85,9 +85,9 @@ function recursiveNth(list, num){
 }
 
 function deepEqual(value1, value2){
-  if((typeof value1 == "object" && value1 != null) && (typeof value2 == "object" && value2 != null)){
+  if((typeof value1 == "object" && value1 !== null) && (typeof value2 == "object" && value2 !== null)){
     for(var prop in value1){
-      if((typeof value1[prop] == "object" && value1 != null) && (typeof value2[prop] == "object" && value2[prop] != null)){
+      if((typeof value1[prop] == "object" && value1 !== null) && (typeof value2[prop] == "object" && value2[prop] !== null)){
         deepEqual(value1[prop], value2[prop]);
       }
       else if(value1[prop]==value2[prop]) {
